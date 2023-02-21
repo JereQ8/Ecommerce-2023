@@ -10,7 +10,7 @@ class ProductosDB {
             await productModel.create(newProduct);
             return 'Producto creado correctamente'
         } catch (err) {
-            throw new Error(err)
+            return err
         }
     }
 
@@ -24,8 +24,14 @@ class ProductosDB {
         }
     }
 
-    async updateProduct(){
-        
+    async updateProduct(idProduct, updateProd){
+        try {
+            // const product= await productModel.findOne({_id: idProduct})
+            await productModel.updateOne({_id: idProduct}, {name: updateProd.name, price: updateProd.price, thumbnail: updateProd.thumbnail})
+
+        } catch (error) {
+            return error
+        }
     }
 }
 

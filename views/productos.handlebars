@@ -7,10 +7,14 @@
         <div class="card-body">
             <h5>{{name}}</h5>
             <b class="card-text">{{price}}</b>
+            <button type="button" id={{_id}} class="btn boton-comprar btn-primary">Agregar al Carrito</button>
         </div>
+        
     </div>
     {{/each}}
     {{else}}
     <h2>There're not products :(</h2>
     {{/if}}
 </div> 
+
+<script src="/static/js/products.js"></script>

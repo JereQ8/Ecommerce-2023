@@ -13,7 +13,8 @@ const schema= new mongoose.Schema({
         required: true
     },
     thumbnail:{
-        type: String
+        type: String,
+        required:true
     }
 })
 
